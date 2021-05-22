@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Easy Peasy Recipes</title>
+    <title>Simply Recipes</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
         <!-- top navbar -->
 		<nav class="nav-extended text-shadow light-blue darken-1">
 			<div class="nav-wrapper">
-				<a href="{{ url_for('get_recipes') }}" class="brand-logo">Easy Peasy Recipes</a>
+				<a href="{{ url_for('get_recipes') }}" class="brand-logo">Simply Recipes</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -40,7 +40,7 @@
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
         {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="#">New Task</a></li>
+            <li><a href="#">New Recipe</a></li>
             <li><a href="#">Manage Categories</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
