@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Add Recipe</h3>
+<!-- add recipe form -->
+    <div class="row card-panel grey lighten-5" >
+        <form class="col s12" method="POST" action="{{url_for('add_recipes')}}">
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for category in categories %}
+                            <option value="{{category.category_name}}">{{category.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="recipe_name" name="recipe_name" type="text" class="validate"  minlength="5" maxlength="100" required>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="recipe_time" name="recipe_time" type="text" class="validate" required>
+                    <label for="recipe_time">Recipe Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="recipe_serving" name="recipe_serving" type="text" class="validate" required>
+                    <label for="recipe_serving">Serving</label>
+                </div>
+            </div>
+             <div class="row ">
+                <div class="input-field col s12" id="ingredients">
+                    <div class="cooking-ingredients-1">
+                        <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5" maxlength="500"
+                        class="materialize-textarea" required></textarea>
+                        <label for="recipe_ingredients">Ingredients</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="2000"
+                    class="materialize-textarea" required></textarea>
+                    <label for="recipe_description">Cooking Method</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
