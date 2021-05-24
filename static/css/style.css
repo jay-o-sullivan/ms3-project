@@ -1,17 +1,9 @@
-.text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-.flashes h4 {
-    line-height: 2;
-}
+
 * {
   padding: 0;
   border: 0;
 }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
+
   /* Float four columns side by side */
   .column {
     float: left;
@@ -44,4 +36,296 @@
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
+  }
+  
+  
+  html {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+   
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;;
+    background-color: #effafa;
+    width: 100vw;
+    color:#212121;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  
+    main {
+      flex: 1 0 auto;
+    }
+  
+  
+  /* Nav bar */
+  .nav-wrapper ul{
+      margin-right: 40px;
+  }
+  
+  nav.nav-extended {
+      height: 64px;
+  }
+  
+  nav a img {
+      width:64px;
+      height:62px;
+      margin-left: 10px;
+      margin-top: 2px;
+  }
+  
+  .sidenav li>a{
+      color: #effafa;    
+  }
+  .flashes h4 {
+      line-height: 2;
+  }
+  
+  /* hero image 
+  .bg-img{
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      
+      
+  }
+  
+  .bg-img img {
+      width: 100%;
+      height: 50%;
+      background-attachment: local ;
+      background-repeat: no-repeat;
+      background-size: 70%;
+  } */
+  
+  /* search area 
+  .search-box {
+      margin:30px;
+  }
+  
+  .search-btn {
+      margin-left: 5px;
+  }*/
+  
+  .field-wrapper{
+      display: block;
+  }
+  
+  
+  .button-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin: 0 auto;
+  }
+  
+  .btn {
+      border-radius: 10px;
+  }
+  
+  .slogan{
+      margin-top: 0;
+  }
+  
+  .food-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:space-evenly;
+      
+  }
+  
+  .hr-recipes {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border: 0;
+      border-top: 1px solid rgba(48, 44, 44, 0.5);
+      width: 85%;
+  }
+  
+  /* card section */
+  .card{
+      border-radius: 10px;
+      display: block;
+     flex-direction: column;
+     justify-content: space-evenly;
+  
+  }
+  
+  .card-content {
+     
+      text-align: center;
+  }
+  .card-image img {
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+  }
+  
+  .card .card-content p {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+  }
+  
+  .card-details{
+       display: grid;
+      grid-template-columns: repeat(2, 1fr) ;
+      align-items: center;
+      justify-content: space-evenly;
+      border: 1px gainsboro solid;
+  }
+  
+  .cook-time,
+  .servings{
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      display: flex;
+      flex-flow: column;
+      text-align: center;
+      
+  }
+      
+  .card-span{
+      font-weight: 700;
+  }
+  
+  #controls {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0 auto;
+      
+  }
+  
+  
+  /* footer  
+  .page-footer{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .footer-text {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      float: left;
+  }
+  
+  .footer-text h5 {
+      margin: 0;
+  }
+  
+  .social-icons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      
+  }
+  
+  .social-icons a img{
+      width: 28px;
+      margin-right:32px;
+  }
+  
+  /* get recipe page 
+  .recipe-image img{
+     width: 100%;
+      height: 100%;
+  }
+  */
+  
+  .ingredients-content {
+      margin-top: 35px;
+      line-height: 2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-align: justify;
+  }
+  .method-content {
+      margin-top: 35px;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-align: justify;
+  }
+  
+  .buttons {
+      float: right;
+      padding: 10px;
+  }
+  
+  /* delete modal  */
+  .modal-delete {
+      display: none;
+  }
+  
+  .modal-delete.show{
+      display: flex;
+      background-color: white;
+      width: 350px;
+      height: 120px;
+      flex-direction: column;
+      border-radius: 20px;
+      align-items: center;
+      justify-content: center;
+       box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.5),
+      5px 5px 10px rgba(48, 47, 47, 0.5);
+      right:350px;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .modal-buttons{
+      display: flex;
+      justify-content: space-between;
+      
+  }
+  
+  /* profile */
+   
+  
+  .card-profile{
+      
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: white;
+      padding:20px;
+      box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.5),
+      5px 5px 10px rgba(48, 47, 47, 0.5);
+  }
+  
+  .profile {
+      display: flex;
+  
+  }
+  
+  .profile-info{
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+  }
+  .profile img{
+      border-radius: 50%;
+  }
+  .profile-name {
+      font-size: 2rem;
+      font-weight: 600;
+      word-spacing: 1rem;
+      
   }

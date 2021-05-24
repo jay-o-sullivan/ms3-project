@@ -1,22 +1,43 @@
-
 {% extends "base.html" %}
+{% block image %}
+<div class="row">
+<!-- hero image -->
+    <div class="con s12">
+        <div class="image">
+            <div class="bg-img">
+                <img src="../static/images/bgimg-hero.jpg" alt="food image">
+                
+            </div> 
+        </div>
+    </div>
+</div>
+{% endblock image%}
 {% block content %}
 
-    <ul class="collapsible">
-        {% for recipe in recipes %}
-        <li>
-            <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                <i class="fas fa-caret-down"></i>
-                <strong>{{ recipe.recipe_name }}</strong> 
-            </div>
-            <div class="collapsible-body">
-                <strong>{{ recipe.category_name }}</strong>
-                <p>{{ recipe.recipe_description }}</p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+  
+<!-- all recipe area sorted in decending order -->
+<div class="row">
+    {% for recipe in recipes %}
+    <div class="col s12 m4">
+        <a href="{{ url_for('get_recipes', recipe_id=recipe._id) }}">
+            <div class="card hoverable">
+                <div class="card-image">
+                    
 
+                </div>
+                <p class="card-content">{{recipe.recipe_name }}</p>
+                <!-- <div >
+                        </div> -->
+                <div class="card-details">
+                    <p class="cook-time">Cook Time<span class="card-span">{{recipe.recipe_time }}</span></p>
+                    <p class="servings">Serves<span class="card-span">{{recipe.recipe_serving }}</span></p>
+                    <!-- <p><em>by:{{recipe.uploaded_by}}</em></p> -->
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
 
    
