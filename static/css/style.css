@@ -83,35 +83,7 @@
   .flashes h4 {
       line-height: 2;
   }
-  
-  /* hero image 
-  .bg-img{
-      position: relative;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-      
-      
-  }
-  
-  .bg-img img {
-      width: 100%;
-      height: 50%;
-      background-attachment: local ;
-      background-repeat: no-repeat;
-      background-size: 70%;
-  } */
-  
-  /* search area 
-  .search-box {
-      margin:30px;
-  }
-  
-  .search-btn {
-      margin-left: 5px;
-  }*/
-  
+
   .field-wrapper{
       display: block;
   }
@@ -207,6 +179,15 @@
       
   }
   
+  /* Style the footer */
+
+    footer {
+        background-color: #777;
+        
+        padding-top: 10px;
+        text-align: center;
+        color: white;
+      }
   
   /* footer  
   .page-footer{

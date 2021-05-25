@@ -5,7 +5,7 @@
     <div class="con s12">
         <div class="image">
             <div class="bg-img">
-                <img src="../static/images/bgimg-hero.jpg" alt="food image">
+                <img src="/static/images/main-page.jpg" alt="food image">
                 
             </div> 
         </div>
@@ -25,17 +25,25 @@
                     
 
                 </div>
+                <p class="category_name"><span class="card-span">{{recipe.category_name }}</span></p>
                 <p class="card-content">{{recipe.recipe_name }}</p>
                 <!-- <div >
                         </div> -->
                 <div class="card-details">
-                    <p class="cook-time">Cook Time<span class="card-span">{{recipe.recipe_time }}</span></p>
-                    <p class="servings">Serves<span class="card-span">{{recipe.recipe_serving }}</span></p>
+                    
+                    <p class="cook-time"><span class="card-span">{{recipe.recipe_time }}</span></p>
+                    <p class="servings"><span class="card-span">{{recipe.recipe_serving }}</span></p>
                     <!-- <p><em>by:{{recipe.uploaded_by}}</em></p> -->
                 </div>
             </div>
+            <div class="col s3">
+                <i class="fas fa-caret-down"></i>
+                <a href="" class="btn-small green accent-4">Done</a>
+                <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+            </div>
         </a>
     </div>
+    
     {% endfor %}
 </div>
 {% endblock %}
