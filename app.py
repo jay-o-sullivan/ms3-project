@@ -84,7 +84,6 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
     if session["user"]:
         return render_template("profile.html", username=username)
 
@@ -133,9 +132,10 @@ def edit_recipes(recipe_id):
             "recipe_time": request.form.get("recipe_time"),
             "uploaded_by": session["user"]
         }
-        mongo.db.recipes.insert_one(recipe)
-        flash("Recipe Successfully Added")
-        return redirect(url_for("get_recipes"))
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, recipe)
+        flash("Recipe Successfully Updated")
+
+    recipe = mongo.db.recipes_find_one({"_id": ObjectId(recipe_id)})   
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipes.html", recipe=recipe, categories=categories)
 
