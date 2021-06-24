@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-  
+  <br>
 <!-- all recipe area sorted in decending order -->
 <div class="row">
     {% for recipe in recipes %}
@@ -16,8 +16,9 @@
                 <p class="card-content">{{recipe.recipe_name }}</p>
             
                 <div class="card-details">
-                    <p class="cook-time"><span class="card-span">{{recipe.recipe_description }}</span></p>
-                    <p class="cook-time"><span class="card-span">{{recipe.recipe_ingredients }}</span></p>
+                    <p class="description"><span class="card-span">{{recipe.recipe_description }}</span></p>
+                    <p class="ingredients"><span class="card-span">{{recipe.recipe_ingredients }}</span></p>
+                    <p class="method"><span class="card-span">{{recipe.recipe_method }}</span></p>
                     <p class="cook-time"><span class="card-span">{{recipe.recipe_time }}</span></p>
                     <p class="servings"><span class="card-span">{{recipe.recipe_serving }}</span></p>
                     <p><em>by:{{recipe.uploaded_by}}</em></p> 
