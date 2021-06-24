@@ -7,7 +7,7 @@
             <h4 class="admin-heading">Welcome, {{ session.user|capitalize }}</h4>
         </div>
         <div class="col s12 center">
-            {% if session.user == 'Jayos123' %}
+            {% if session.user == 'user' %}
                 <p>All of your recipes are stored here!</p>
                 
             {% else %}
@@ -18,60 +18,8 @@
             
         </div>
         
-        <div class="col s12 m6 center">
-            <a href="{{ url_for('add_recipes') }}" class="btn blue lighten-4 black-text text-shadow">Add New Recipe</a>
-        </div>
-        <!-- <div class="col s12 m6 center">
-          <a href="{{ url_for('edit_recipes') }}" class="btn blue lighten-4 black-text text-shadow">Edit Recipe</a>
-      </div> -->
+       
     </div>
 </div>
-<!-- each recipe categorised into different courses -->
-{% for category in categories %}
-    <div class="row">
-        <div class="col s12 center">
-            <h4 class="category-header">{{category.category_name}}s</h4>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-            <!-- if there is a recipe, created by the current session user, they will be displayed here -->
-            <div class="card-panel">
-                <div class="row">
-                    {% for recipe in recipes %}
-                        {% if session.user == recipe.uploaded_by %}
-                            {% if recipe.category_name == category.category_name %}
-                                <div class="col s12 m6 l4">
-                                    <div class="card">
-                                        <div class="row">
-                                            <div class="col s12 center">
-                                                <span class="card-title">{{ recipe.recipe_name  }}</span>
-                                            </div>
-                                            <div class="col s10 offset-s1 recipe-image">
-                                                <div class="card-image">
-                                                    <img src="{{ recipe.image_url }}" alt="recipe-image">
-                                                </div>
-                                            </div>
-                                            <div class="col s6 center">
-                                                <p><i class="fas fa-hourglass-half"></i>:  {{ recipe.recipe_time }} minutes</p>
-                                            </div>
-                                            <div class="col s6 center">
-                                                <p>Serves: {{ recipe.recipe_serving }}</p>
-                                            </div>
-                                            <div class="col s12 center" id="description">
-                                                <p>{{ recipe.recipe_description }}</p>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endif %} 
-                    {% endfor %}   
-                </div>          
-            </div>
-        </div>
-    </div>
 {% endfor %}
 {% endblock %}
