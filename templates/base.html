@@ -25,7 +25,7 @@
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                         <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
-                        
+                       
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -69,7 +69,7 @@
         {% endblock %}
     </main>
     
-    <footer class="page-footer">
+    <footer class="text-shadow light-blue darken-1">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
